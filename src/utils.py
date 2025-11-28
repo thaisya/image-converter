@@ -1,3 +1,5 @@
+import sys
+import os
 from PIL import Image
 from typing import Tuple, Optional
 
@@ -35,4 +37,17 @@ def convert(name: str, ext: str, path: str) -> Image.Image:
     if ext and ext.lower() in ["jpg", "jpeg"]:
         img = img.convert("RGB")
     return img
+
+def resource_path(*parts: str) -> str:
+    """
+        Creates an absolute path from a relative path or absolute path for both .py launch and .exe build.
+
+        Args:
+            *parts (str): Parts of the file name (for example ".png", ".jpg", etc.).
+
+        Returns:
+            str: Absolute path to the file.
+    """
+    base_dir = getattr(sys, "_MEIPASS", os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    return str(os.path.join(base_dir, *parts))
 

@@ -1,7 +1,7 @@
 import flet as ft
 import os
 from typing import Optional, List, Tuple
-from .utils import filename_format_separator, convert
+from .utils import filename_format_separator, convert, resource_path
 
 
 class App:
@@ -30,8 +30,9 @@ class App:
         self.is_dark_theme: bool = False
         
         # Set window icon
-        # Adjusted path to look for icon in ../img/icon.png relative to this file
-        self.icon_path: str = os.path.join(os.path.dirname(os.path.dirname(__file__)), "img", "icon.png")
+        # Adjusted path to look for icon in ../img/icon.ico using resource_path function
+        self.icon_path: str = resource_path("img", "icon.ico")
+        print("ICON PATH:", self.icon_path, os.path.exists(self.icon_path))
         if os.path.exists(self.icon_path):
             self.page.window_icon = self.icon_path
         
@@ -364,14 +365,14 @@ class App:
                     ft.Container(
                         content=ft.Image(
                             src=self.icon_path,
-                            width=80,
-                            height=80,
+                            width=50,
+                            height=50,
                             fit=ft.ImageFit.CONTAIN,
                         ),
                         margin=ft.Margin(top=8, bottom=0, left=0, right=0),
                     ),
                     self.header_title,
-                ], spacing=10, vertical_alignment=ft.CrossAxisAlignment.CENTER),
+                ], spacing=30, vertical_alignment=ft.CrossAxisAlignment.CENTER),
                 ft.Container(
                     content=ft.Row(
                         [

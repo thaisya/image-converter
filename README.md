@@ -5,7 +5,7 @@ A modern, user-friendly image conversion application built with Python and Flet.
 ## Features
 
 -   **Wide Format Support**: Convert between PNG, JPEG, BMP, GIF, TIFF, ICO, WEBP, and many more.
--   **Drag & Drop Interface**: Easily select files for conversion.
+-   **Intuitive Interface**: Easily select files for conversion.
 -   **Theme Support**: Switch between Light and Dark modes for a comfortable viewing experience.
 -   **Responsive Design**: Clean and intuitive UI that adapts to your workflow.
 -   **Secure**: All conversions happen locally on your machine.
