@@ -68,7 +68,7 @@ If you wish to build a standalone executable yourself:
 
 1.  **Install development dependencies:**
     ```bash
-    pip install flet pyinstaller
+    pip install flet pillow pyinstaller
     ```
 
 2.  **Build the application:**
