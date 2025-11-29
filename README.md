@@ -4,26 +4,39 @@
 </div>
 
 A modern, user-friendly image conversion application built with Python and Flet.
+Conversion is powered by the Pillow library.
 
 ## Features
 
--   **Wide Format Support**: Convert between PNG, JPEG, BMP, GIF, TIFF, ICO, WEBP, and many more.
+-   **Wide Format Support**: Convert between a vast array of image formats.
 -   **Intuitive Interface**: Easily select files for conversion.
 -   **Theme Support**: Switch between Light and Dark modes for a comfortable viewing experience.
 -   **Responsive Design**: Clean and intuitive UI that adapts to your workflow.
 -   **Secure**: All conversions happen locally on your machine.
 
-## Installation & Usage
+## Supported Formats
 
-### Windows (Executable)
-The application is available as a standalone executable for Windows.
+The application supports conversion **FROM** and **TO** the following formats:
+
+`PNG`, `JPEG`, `JPG`, `BMP`, `GIF`, `TIFF`, `ICO`, `ICNS`, `WEBP`, `PPM`, `PGM`, `PBM`, `PNM`, `TGA`, `DDS`, `PCX`, `IM`, `MPO`, `PFM`, `SGI`
+
+> [!NOTE]
+> **PDF** format is supported as an **output** format only (TO PDF).
+
+## Installation
+
+You can run Image Converter using the standalone executable or by running the source code manually.
+
+### Option 1: Windows Executable (Recommended)
+The easiest way to run the application on Windows.
+
 1.  Navigate to the `dist` folder.
 2.  Run `ImageConverter.exe`.
    
    *No Python installation required.*
 
-### Python (Cross-Platform)
-To run the application from source on Windows, macOS, or Linux:
+### Option 2: Manual Installation
+For developers or users on other platforms (macOS, Linux), or if you prefer running from source.
 
 1.  **Clone the repository:**
     ```bash
@@ -50,8 +63,8 @@ To run the application from source on Windows, macOS, or Linux:
     python main.py
     ```
 
-## Building from Source (macOS / Linux)
-If you wish to build a standalone executable for macOS or Linux, you can use `flet pack`.
+## Building from Source
+If you wish to build a standalone executable yourself:
 
 1.  **Install development dependencies:**
     ```bash
@@ -60,9 +73,8 @@ If you wish to build a standalone executable for macOS or Linux, you can use `fl
 
 2.  **Build the application:**
     ```bash
-    flet pack main.py --name "Image Converter" --icon "img/icon.png" --add-data "img;img"
+    pyinstaller ImageConverter.spec --clean --noconfirm
     ```
-    *Note: On non-Windows systems, the icon format and separator in `--add-data` might vary (use `:` instead of `;` on Unix-like systems).*
 
 ## Usage Guide
 

@@ -1,5 +1,4 @@
 import flet as ft
-import os
 from typing import Optional, List, Tuple
 from .utils import filename_format_separator, convert, resource_path
 
@@ -22,19 +21,16 @@ class App:
         self.page.window_resizable = True
         self.page.vertical_alignment = ft.MainAxisAlignment.START
         self.page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
-        
+
         # Window dimensions
         self.page.window_width = 1000
         self.page.window_height = 800
 
         self.is_dark_theme: bool = False
-        
+
         # Set window icon
-        # Adjusted path to look for icon in ../img/icon.ico using resource_path function
         self.icon_path: str = resource_path("img", "icon.ico")
-        print("ICON PATH:", self.icon_path, os.path.exists(self.icon_path))
-        if os.path.exists(self.icon_path):
-            self.page.window_icon = self.icon_path
+        self.page.window.icon = self.icon_path
         
         # Theme Colors (Initialized with Light Theme defaults)
         self.primary_color: str = "#5DADE2"
@@ -54,7 +50,7 @@ class App:
         # Supported Formats
         self.to_formats: List[str] = [
             "PNG", "JPEG", "JPG", "BMP", "GIF", "TIFF", "ICO", "ICNS", "WEBP", "PPM",
-            "PGM", "PBM", "PNM", "TGA", "DDS", "PCX", "IM", "MPO", "PFM", "SGI"
+            "PGM", "PBM", "PNM", "TGA", "DDS", "PCX", "IM", "MPO", "PFM", "SGI", "PDF",
         ]
 
         # State
